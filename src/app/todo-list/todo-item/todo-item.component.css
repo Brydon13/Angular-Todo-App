@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+.container {
+  justify-content: space-between;
+}

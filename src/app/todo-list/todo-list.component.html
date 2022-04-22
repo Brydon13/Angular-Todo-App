@@ -1,0 +1,44 @@
+<div class="flex-col">
+  <div class="title">To Do List</div>
+  <hr />
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <input type="text" class="input-box" ngModel name="todo" required />
+    <button type="submit" [disabled]="!f.valid">Add</button>
+  </form>
+  <div>
+    <div class="section-title">TODO</div>
+    <hr />
+    <div>
+      <div *ngFor="let todo of todos; let i = index">
+        <app-todo-item
+          *ngIf="todo.completed === false"
+          [todo]="todo"
+          [index]="i"
+        ></app-todo-item>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section-title">COMPLETED</div>
+    <hr />
+    <div>
+      <div *ngFor="let todo of todos; let i = index">
+        <app-todo-item
+          *ngIf="todo.completed === true"
+          [todo]="todo"
+          [index]="i"
+        ></app-todo-item>
+      </div>
+    </div>
+  </div>
+  <div class="progress-bar">
+    <mat-progress-bar
+      mode="determinate"
+      [value]="completionData.percentComplete"
+    ></mat-progress-bar>
+    <div class="flex-center">
+      Completed: {{ completionData.completeCount }} /
+      {{ completionData.completeCount + completionData.incompleteCount }}
+    </div>
+  </div>
+</div>

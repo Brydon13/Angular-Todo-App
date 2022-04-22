@@ -1,0 +1,29 @@
+hr {
+  width: 300px;
+}
+
+.flex-col {
+  width: 300px;
+}
+
+.title {
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+}
+
+.input-box {
+  margin-top: 5px;
+  width: 250px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.section-title {
+  padding-top: 15px;
+}
+.progress-bar {
+  padding-top: 25px;
+}

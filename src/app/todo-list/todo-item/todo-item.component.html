@@ -1,0 +1,27 @@
+<div>
+  <form #f="ngForm">
+    <div class="flex container">
+      <div class="flex">
+        <input
+          type="checkbox"
+          name="status"
+          (change)="changeStatus(f)"
+          [ngModel]="todo.completed"
+        />
+        <div
+          *ngIf="!todo.editing"
+          [ngClass]="{ strikethrough: todo.completed }"
+        >
+          {{ todo.name }}
+        </div>
+        <input *ngIf="todo.editing" type="text" ngModel name="editText" />
+      </div>
+      <div>
+        <button name="edit" (click)="setEdit(f)">
+          {{ todo.editing ? "Save" : "Edit" }}
+        </button>
+        <button (click)="removeHandler()">Remove</button>
+      </div>
+    </div>
+  </form>
+</div>
